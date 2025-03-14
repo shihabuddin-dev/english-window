@@ -3,10 +3,12 @@
 .poppins-font {
   font-family: "Poppins", sans-serif;
 }
+
 .inter-font {
   font-family: "Inter", sans-serif;
-  
+
 }
+
 .hind-siliguri-font {
   font-family: "Hind Siliguri", sans-serif;
 }
@@ -26,4 +28,10 @@ input[type="number"]::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.category-btn.active {
+  background-color: #422AD5 !important;
+  color: white !important;
+  border-color: #422AD5 !important;
 }

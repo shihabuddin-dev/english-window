@@ -7,12 +7,11 @@ document.getElementById('login-btn').addEventListener('click', (event) => {
         if (convertedPin === 123456) {
             alert(`Congratulation ${inputName} You have Successfully Logged In`)
             document.getElementById('login-page').classList.add('hidden')
-            // document.getElementById('footer').classList.add('hidden')
             document.getElementById('navbar').classList.remove('hidden')
             document.getElementById('all-content').classList.remove('hidden')
             document.getElementById('faq').classList.remove('hidden')
 
-        } else alert(`This is ${inputPin} Wrong Pin Number`)
+        } else alert(`${convertedPin ? `${convertedPin}` : `Please Provide Valid Pin That`} is Wrong Pin Number`)
 
     } else alert('Please Enter Your Name')
 
@@ -34,9 +33,9 @@ document.getElementById('logout-btn').addEventListener('click', () => {
 // faq
 // footer
 
+// document.getElementById('navbar').classList.add('hidden')
+// document.getElementById('all-content').classList.add('hidden')
+// document.getElementById('faq').classList.add('hidden')
+
+document.getElementById('login-page').classList.add('hidden')
 document.getElementById('navbar').classList.add('hidden')
-document.getElementById('all-content').classList.add('hidden')
-document.getElementById('faq').classList.add('hidden')
-
-
-
