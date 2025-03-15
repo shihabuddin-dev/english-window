@@ -25,7 +25,6 @@ const displayDataByBtn = (data) => {
 
 }
 
-
 // Get Words by Levels 
 const getLevelData = async (level) => {
     try {
@@ -34,7 +33,7 @@ const getLevelData = async (level) => {
         displayDataByLevel(data.data);
         // Button click event listener
         document.querySelectorAll(".category-btn").forEach(button => {
-            button.addEventListener("click", () => {
+            button.addEventListener("click", function () {
                 document.getElementById('all-dynamic-container').classList.remove('hidden')
                 document.getElementById('default-div').classList.add('hidden')
                 // Remove active class from all buttons
@@ -65,6 +64,7 @@ const displayDataByLevel = (levels) => {
             <h2 class="hind-siliguri-font text-2xl md:text-[34px] font-medium">নেক্সট Lesson এ যান</h2>
         </div>
         `
+
     }
     levels.forEach(level => {
         const newDiv = document.createElement('div')
@@ -73,21 +73,54 @@ const displayDataByLevel = (levels) => {
                 <div class="text-center space-y-3 md:space-y-5">
                     <h3 class="text-2xl md:text-[32px] font-bold">${level.word}</h3>
                     <h4 class="text-lg md:text-xl font-medium">Meaning/ Pronunciation</h4>
-                    <h3 class="hind-siliguri-font text-xl md:text-3xl font-semibold">${level.meaning}/ ${level.pronunciation}
+                    <h3 class="hind-siliguri-font text-xl md:text-3xl font-semibold">${level.meaning ? `${level.meaning}` : `অর্থ নেই`}/ ${level.pronunciation}
                     </h3>
                 </div>
                 <div class="flex items-center justify-between">
+                    <div onclick="word_details.showModal()"><p onclick=getWordsDetail('${level.id}') class="bg-fifth-color p-1 md:p-2 rounded-md"><i
+                            class="text-xl md:text-2xl fa-solid fa-circle-info"></i>
+                    </p> </div>
                     <p class="bg-fifth-color p-1 md:p-2 rounded-md"><i
-                            class="text-xl md:text-3xl fa-solid fa-circle-info"></i>
-                    </p>
-                    <p class="bg-fifth-color p-1 md:p-2 rounded-md"><i
-                            class="text-xl md:text-3xl fa-solid fa-volume-high"></i>
+                            class="text-xl md:text-2xl fa-solid fa-volume-high"></i>
                     </p>
                 </div>
             </div>
         `
         dynamicContainer.appendChild(newDiv)
     })
+
+
+}
+
+// Get Words Detail by modal
+const getWordsDetail = async (wordId) => {
+    const response = await fetch(`https://openapi.programming-hero.com/api/word/${wordId}`)
+    const data = await response.json()
+    displayWordDetails(data.data);
+}
+getWordsDetail()
+
+const displayWordDetails = (details) => {
+    document.getElementById('word_details')
+    const detailsContainer = document.getElementById('details-container')
+    detailsContainer.innerHTML = ` 
+   <div class="rounded-md p-6 border-2 space-y-4">
+                <h3 class="text-2xl md:text-[32px] font-bold">${details.meaning}</h3>
+                <p class="text-xl md:tetx-2xl font-semibold">Meaning</p>
+                <p class="hind-siliguri-font text-xl md:tetx-2xl font-medium">${details.meaning}</p>
+                <p class="text-xl md:tetx-2xl font-semibold">Example</p>
+                <p class="text-xl md:tetx-2xl font-normal">${details.sentence}</p>
+                <p class="hind-siliguri-font text-xl md:tetx-2xl font-medium">সমার্থক শব্দ গুলো</p>
+                <div class="flex gap-2">
+                    <button
+                        class="category-btn btn bg-modal-btn-bg border-2 px-4 hover:text-primary-color text-sm font-semibold hover:bg-transparent hover:border-primary-color hover:text-black rounded-md">${details.synonyms[0]}</button>
+                    <button
+                        class="category-btn btn bg-modal-btn-bg border-2 px-4 hover:text-primary-color text-sm font-semibold hover:bg-transparent hover:border-primary-color hover:text-black rounded-md">${details.synonyms[1]}</button>
+                    <button
+                        class="category-btn btn bg-modal-btn-bg border-2 px-4 hover:text-primary-color text-sm font-semibold hover:bg-transparent hover:border-primary-color hover:text-black rounded-md">${details.synonyms[2]}</button>
+                </div>
+            </div>
+    `
 
 
 }

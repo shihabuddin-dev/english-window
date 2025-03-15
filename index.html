@@ -28,6 +28,7 @@
                         'fourth-color': '#F8F8F8;',
                         'fifth-color': '#1A91FF1A;',
                         'secondary-text': '#18181B;',
+                        'modal-btn-bg': '#EDF7FF;',
 
                     }
                 }
@@ -40,7 +41,7 @@
 <body class="poppins-font px-2">
 
     <!-- header section  -->
-    <header id="navbar" class="bg-slate-100 border-b-2 border-b-third-color">
+    <header id="navbar" class="bg-slate-100 border-b-2 border-b-four-color">
         <nav
             class="flex flex-col md:flex-row gap-4 items-center justify-between border-t-2 border-third-color py-4 container mx-auto">
             <div class="flex items-center"><span class="text-xl md:text-[28px] font-semibold">English</span>
@@ -92,6 +93,7 @@
             <img src="./assets/hero-student.png" alt="main header image">
         </div>
     </section>
+
     <!-- Let's Learn Vocabularies section  -->
     <section id="all-content" class="py-10 md:py-[100px]">
         <h2 class="text-center text-3xl md:text-4xl font-bold container mx-auto"><span
@@ -109,9 +111,9 @@
         <section id="all-dynamic-container"
             class="grid gap-5 md:gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 inter-font bg-fourth-color p-4 md:p-8 container mx-auto mt-6 md:mt-8 rounded-lg">
 
-            
+
         </section>
-        
+
         <div id="default-div"
             class="rounded-md mt-4 md:mt-6 bg-fourth-color py-12 md:py-16 text-center space-y-3 md:space-y-4 container mx-auto">
             <p class="hind-siliguri-font text-sm">আপনি এখনো কোন Lesson Select করেন নি</p>
@@ -130,43 +132,43 @@
             Asked Questions</h2>
 
         <div class="mt-6 md:mt-12 space-y-2 md:space-y-3">
-            <div class="collapse collapse-plus bg-fourth-color rounded-lg">
+            <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" checked="checked" />
                 <div class="collapse-title font-semibold">1. How can I start learning English on this website?</div>
-                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the
-                    registration process.</div>
+                <div class="collapse-content text-sm">Visit English Janala choose a course, practice vocabulary,
+                    grammar, and listening daily, and stay consistent to improve English skills.</div>
             </div>
 
-            <div class="collapse collapse-plus bg-fourth-color rounded-lg">
+            <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" />
                 <div class="collapse-title font-semibold">2. Is this website free to use?</div>
-                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make
-                    changes.</div>
+                <div class="collapse-content text-sm">Yes, English Janala offers free resources, but some advanced
+                    courses may require payment. Check their website for full details.</div>
             </div>
-            <div class="collapse collapse-plus bg-fourth-color rounded-lg">
+            <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">2. Is this website free to use?</div>
-                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make
-                    changes.</div>
+                <div class="collapse-title font-semibold">3. Do I need to create an account?</div>
+                <div class="collapse-content text-sm">Yes, you have to create an account on English Janala to track
+                    progress and access some learning materials.</div>
             </div>
-            <div class="collapse collapse-plus bg-fourth-color rounded-lg">
+            <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">2. Is this website free to use?</div>
-                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make
-                    changes.</div>
+                <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
+                <div class="collapse-content text-sm">You can build your English vocabulary on English Janala by
+                    practicing daily lessons, using flashcards, and engaging in interactive exercises.</div>
             </div>
-            <div class="collapse collapse-plus bg-fourth-color rounded-lg">
+            <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">2. Is this website free to use?</div>
-                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make
-                    changes.</div>
+                <div class="collapse-title font-semibold">5. Do you offer certificates for completed courses?</div>
+                <div class="collapse-content text-sm">Yes, English Janala offers certificates for completed courses,
+                    helping you showcase your progress and achievements in learning English.</div>
             </div>
         </div>
     </section>
     <!-- footer section  -->
 
     <footer id="footer"
-        class="flex flex-col md:flex-row gap-4 md:items-center justify-between border-t-2 border-third-color py-10 md:py-[100px] container mx-auto">
+        class="flex flex-col md:flex-row gap-4 md:items-center justify-between border-t-2 border-four-color py-10 md:py-[100px] container mx-auto">
         <div>
             <div class="flex items-center pb-2 md:pb-5"><span
                     class="text-xl md:text-[28px] font-semibold">English</span> <img src="./assets/logo.svg"
@@ -188,6 +190,28 @@
             </div>
         </div>
     </footer>
+
+
+
+    <!-- modal  -->
+    <div>
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="word_details" class="modal">
+            <div class="modal-box">
+                <div id="details-container">
+
+                </div>
+                <div class="modal-action justify-start">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn bg-primary-color text-white hover:bg-primary-color">Complete
+                            Learning</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
     <script src="./utilities/utilities.js"></script>
     <script src="./scripts/app.js"></script>
 </body>
