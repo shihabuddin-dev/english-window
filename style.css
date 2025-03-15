@@ -38,3 +38,9 @@ input[type="number"] {
 html {
   scroll-behavior: smooth;
 }
+
+header {
+  border-bottom: 1px solid rgb(198, 189, 189);
+  backdrop-filter: blur(40px);
+  background: linear-gradient(178.08deg, rgba(255, 255, 255, 0.3) -28.101%, rgba(0, 0, 0, 0) 128.101%), linear-gradient(169.25deg, rgba(255, 255, 255, 0.05) 24.246%, rgba(0, 0, 0, 0) 24.246%);
+}

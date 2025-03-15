@@ -16,7 +16,7 @@ const displayDataByBtn = (data) => {
         const newDiv = createByTagName('div')
         newDiv.innerHTML = ` 
         <button id="btn-${btn.level_no}" onclick="(getLevelData('${btn.level_no}'))"
-    class="category-btn btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
+    class="category-btn load-time btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
         class="text-lg fa-solid fa-book-open"></i>Lesson - ${btn.level_no}</button>
         `
         dynamicBtn.appendChild(newDiv)
@@ -70,10 +70,10 @@ const displayDataByLevel = (levels) => {
                     </h3>
                 </div>
                 <div class="flex items-center justify-between cursor-pointer">
-                    <div onclick="word_details.showModal()"><p onclick=getWordsDetail('${level.id}') class="bg-fifth-color p-1 md:p-2 rounded-md"><i
+                    <div onclick="word_details.showModal()"><p onclick=getWordsDetail('${level.id}') class="bg-fifth-color px-2 md:px-3 py-1 md:py-2 rounded-md"><i
                             class="text-xl md:text-2xl fa-solid fa-circle-info"></i>
                     </p> </div>
-                    <div onclick="pronounceWord('${level.word}')" class="cursor-pointer"> <p class="bg-fifth-color p-1 md:p-2 rounded-md"><i
+                    <div onclick="pronounceWord('${level.word}')" class="cursor-pointer"> <p class="bg-fifth-color px-1 md:px-2 py-1 md:py-2  rounded-md"><i
                             class="text-xl md:text-2xl fa-solid fa-volume-high"></i>
                     </p>
                     </div>
@@ -83,7 +83,6 @@ const displayDataByLevel = (levels) => {
         dynamicContainer.appendChild(newDiv)
     })
 }
-
 // Get Words Detail by modal
 const getWordsDetail = async (wordId) => {
     try {

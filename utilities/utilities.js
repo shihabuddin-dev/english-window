@@ -14,10 +14,9 @@ const getById = (id) => document.getElementById(id)
 // create Element by tag name function 
 const createByTagName = (tagname) => document.createElement(tagname)
 
-
 // Vocabulary Pronunciation (Japanese)
 function pronounceWord(word) {
   const utterance = new SpeechSynthesisUtterance(word);
-  utterance.lang = 'en-EN'; 
+  utterance.lang = 'en-EN';
   window.speechSynthesis.speak(utterance);
 }

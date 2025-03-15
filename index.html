@@ -7,6 +7,8 @@
     <title>Learn English || With English Janala</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <!-- sweet alert cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Font awesome cdn  -->
     <script src="https://kit.fontawesome.com/a8e60d2571.js" crossorigin="anonymous"></script>
     <!-- daisy ui and tailwind cdn  -->
@@ -41,9 +43,9 @@
 <body class="poppins-font px-2">
 
     <!-- header section  -->
-    <header id="navbar" class="sm:fixed top-0 w-full z-10 px-4 md:px-6 bg-slate-100 border-b-2 border-b-four-color">
+    <header id="navbar" class="md:fixed top-0 w-full z-10 px-4 md:px-6  border-b-2 border-b-four-color">
         <nav
-            class="flex flex-col md:flex-row gap-4 items-center justify-between border-t-2 border-third-color py-4 container mx-auto">
+            class="flex flex-col md:flex-row gap-4 items-center justify-between border-t-2 border-third-color py-2 md:py-4 container mx-auto">
             <div class="flex items-center"><span class="text-[28px] font-semibold">English</span>
                 <img src="./assets/logo.svg" alt="this is logo"> <span class="tiro-bangla-font text-xl">জানালা</span>
             </div>
@@ -134,34 +136,59 @@
         <div class="mt-6 md:mt-12 space-y-3 md:space-y-4">
             <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" checked="checked" />
-                <div class="collapse-title font-semibold">1. How can I start learning English on this website?</div>
-                <div class="collapse-content text-sm">Visit English Janala choose a course, practice vocabulary,
-                    grammar, and listening daily, and stay consistent to improve English skills.</div>
+                <div class="collapse-title font-semibold">1. What is the difference between var, let, and const?</div>
+                <div class="collapse-content text-sm">
+                    <ol class="pl-3 list-disc">
+                        <li><strong class="text-secondary-color">var:</strong> Function-scoped, can be
+                            redeclared/reassigned. Avoid in modern JS.
+                        </li>
+                        <li><strong class="text-secondary-color">let:</strong> Block-scoped, can be reassigned, but not
+                            redeclared in the same scope.
+                        </li>
+                        <li><strong class="text-secondary-color">const:</strong> Block-scoped, must be initialized,
+                            cannot be reassigned.</li>
+                    </ol>
+                </div>
             </div>
 
             <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">2. Is this website free to use?</div>
-                <div class="collapse-content text-sm">Yes, English Janala offers free resources, but some advanced
-                    courses may require payment. Check their website for full details.</div>
+                <div class="collapse-title font-semibold">2. How many the difference between map(), forEach(), and
+                    filter()?</div>
+                <div class="collapse-content text-sm">
+                    <ol class="pl-3 list-disc">
+                        <li><strong class="text-secondary-color">map:</strong> transforms & returns a new array.
+                        </li>
+                        <li><strong class="text-secondary-color">forEach:</strong> iterates, no new array.
+                        </li>
+                        <li><strong class="text-secondary-color">filter:</strong> selects elements based on a condition,
+                            returning a new array.
+
+                        </li>
+                    </ol>
+                </div>
             </div>
             <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">3. Do I need to create an account?</div>
-                <div class="collapse-content text-sm">Yes, you have to create an account on English Janala to track
-                    progress and access some learning materials.</div>
+                <div class="collapse-title font-semibold">3. Explain arrow functions and how they are different from
+                    regular functions?</div>
+                <div class="collapse-content text-sm">Arrow functions is more shorter syntax and lexically bind this
+                    (inherit this from the surrounding code). Regular functions have a longer syntax and their own this
+                    context, determined by how they're called.</div>
             </div>
             <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
-                <div class="collapse-content text-sm">You can build your English vocabulary on English Janala by
-                    practicing daily lessons, using flashcards, and engaging in interactive exercises.</div>
+                <div class="collapse-title font-semibold">4. How JavaScript Promises work?</div>
+                <div class="collapse-content text-sm">Promises handle asynchronous operations. They represent a future
+                    value, which is either resolved (success) or rejected (failure). Promises provide a cleaner
+                    alternative to callbacks for managing asynchronous code. </div>
             </div>
             <div class="collapse collapse-plus bg-fourth-color rounded-md">
                 <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">5. Do you offer certificates for completed courses?</div>
-                <div class="collapse-content text-sm">Yes, English Janala offers certificates for completed courses,
-                    helping you showcase your progress and achievements in learning English.</div>
+                <div class="collapse-title font-semibold">5. How closures work in JavaScript?</div>
+                <div class="collapse-content text-sm">Closures let a function access variables from its outer scope even
+                    after the outer function has finished executing. Essentially, they "remember" their environment,
+                    enabling data encapsulation and state preservation.</div>
             </div>
         </div>
     </section>
