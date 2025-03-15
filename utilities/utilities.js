@@ -1,41 +1,15 @@
-document.getElementById('login-btn').addEventListener('click', (event) => {
-    event.preventDefault()
-    const inputName = document.getElementById('input-name').value
-    const inputPin = document.getElementById('input-pin').value
-    const convertedPin = parseInt(inputPin)
-    if (inputName) {
-        if (convertedPin === 123456) {
-            alert(`Congratulation ${inputName} You have Successfully Logged In`)
-            document.getElementById('login-page').classList.add('hidden')
-            document.getElementById('navbar').classList.remove('hidden')
-            document.getElementById('all-content').classList.remove('hidden')
-            document.getElementById('faq').classList.remove('hidden')
+// hide by id 
+const hideById = (id) => document.getElementById(id).classList.add('hidden')
 
-        } else alert(`${convertedPin ? `${convertedPin}` : `Please Provide Valid Pin That`} is Wrong Pin Number`)
+// remove hide by id 
+const showById = (id) => document.getElementById(id).classList.remove('hidden')
 
-    } else alert('Please Enter Your Name')
+hideById('login-page')
+// hideById('navbar')
 
-})
+// get Element by id function 
+const getById = (id) => document.getElementById(id)
+// create Element by tag name function 
+const createByTagName = (tagname) => document.createElement(tagname)
 
-document.getElementById('logout-btn').addEventListener('click', () => {
-    alert('You Have Successfully Log Out')
-    document.getElementById('login-page').classList.remove('hidden')
-    document.getElementById('navbar').classList.add('hidden')
-    document.getElementById('all-content').classList.add('hidden')
-    document.getElementById('faq').classList.add('hidden')
-
-
-})
-
-// navbar
-// login-page
-// all-content
-// faq
-// footer
-
-// document.getElementById('navbar').classList.add('hidden')
-// document.getElementById('all-content').classList.add('hidden')
-// document.getElementById('faq').classList.add('hidden')
-
-document.getElementById('login-page').classList.add('hidden')
-document.getElementById('navbar').classList.add('hidden')
+hideById('all-dynamic-container')

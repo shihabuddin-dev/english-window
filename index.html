@@ -48,13 +48,15 @@
                 <img src="./assets/logo.svg" alt="this is logo"> <span class="tiro-bangla-font text-xl">জানালা</span>
             </div>
 
-            <div class="flex gap-0.5 md:gap-2">
-                <button
-                    class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color  hover:border-primary-color hover:text-white rounded-md"><i
-                        class="text-lg fa-solid fa-circle-question"></i> FAQ</button>
-                <button
-                    class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
-                        class="text-lg fa-solid fa-book-open"></i> Learn</button>
+            <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+                <a href="#faq" class="flex">
+                    <button
+                        class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color  hover:border-primary-color hover:text-white rounded-md"><i
+                            class="text-lg fa-solid fa-circle-question"></i> FAQ</button>
+                </a>
+                <a href="#learn" class="flex"><button
+                        class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
+                            class="text-lg fa-solid fa-book-open"></i> Learn</button></a>
                 <button id="logout-btn"
                     class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
                         class="text-lg fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
@@ -96,13 +98,13 @@
 
     <!-- Let's Learn Vocabularies section  -->
     <section id="all-content" class="py-10 md:py-[100px]">
-        <h2 class="text-center text-3xl md:text-4xl font-bold container mx-auto"><span
+        <h2 id="learn" class="text-center text-3xl md:text-4xl font-bold container mx-auto pb-4 md:pb-6"><span
                 class="text-secondary-color">Let's</span> Learn
             Vocabularies</h2>
 
         <!-- dynamic btn -->
 
-        <div id="dynamic-btn-container" class="mt-6 flex items-center justify-center gap-2 md:gap-4 flex-wrap">
+        <div id="dynamic-btn-container" class="mt-6 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
 
 
         </div>
@@ -128,7 +130,8 @@
     <!-- Frequently Asked Questions section  -->
 
     <section id="faq" class="py-10 md:py-[100px] container mx-auto">
-        <h2 class="text-center text-3xl md:text-4xl font-bold"><span class="text-secondary-color">Frequently</span>
+        <h2 class="text-center text-3xl md:text-4xl font-bold pb-4 md:pb-6"><span
+                class="text-secondary-color">Frequently</span>
             Asked Questions</h2>
 
         <div class="mt-6 md:mt-12 space-y-2 md:space-y-3">
@@ -192,7 +195,6 @@
     </footer>
 
 
-
     <!-- modal  -->
     <div>
         <!-- Open the modal using ID.showModal() method -->
@@ -213,6 +215,7 @@
     </div>
 
     <script src="./utilities/utilities.js"></script>
+    <script src="./scripts/login.js"></script>
     <script src="./scripts/app.js"></script>
 </body>
 
