@@ -13,3 +13,10 @@ const getById = (id) => document.getElementById(id)
 const createByTagName = (tagname) => document.createElement(tagname)
 
 hideById('all-dynamic-container')
+
+// Vocabulary Pronunciation 
+function pronounceWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-EN'; // Japanese
+    window.speechSynthesis.speak(utterance);
+  }

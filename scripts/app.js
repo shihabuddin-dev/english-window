@@ -73,7 +73,7 @@ const displayDataByLevel = (levels) => {
                     <div onclick="word_details.showModal()"><p onclick=getWordsDetail('${level.id}') class="bg-fifth-color p-1 md:p-2 rounded-md"><i
                             class="text-xl md:text-2xl fa-solid fa-circle-info"></i>
                     </p> </div>
-                    <div class="cursor-pointer"> <p class="bg-fifth-color p-1 md:p-2 rounded-md"><i
+                    <div onclick="pronounceWord('${level.word}')" class="cursor-pointer"> <p class="bg-fifth-color p-1 md:p-2 rounded-md"><i
                             class="text-xl md:text-2xl fa-solid fa-volume-high"></i>
                     </p>
                     </div>
@@ -106,7 +106,7 @@ const displayWordDetails = (details) => {
     }
     detailsContainer.innerHTML = `
         <div class="rounded-md p-6 border-2 space-y-4">
-            <h3 class="text-2xl md:text-[32px] font-bold">${details.word} (<i class="fa-solid fa-microphone-lines"></i> ${details.pronunciation})</h3>
+            <h3 onclick="pronounceWord('${details.word}, Word Example is, ${details.sentence}')" class="cursor-pointer text-2xl md:text-[32px] font-bold">${details.word} (<i class="fa-solid fa-microphone-lines"></i> ${details.pronunciation})</h3>
             <p class="text-xl md:tetx-2xl font-semibold">Meaning</p>
             <p class="hind-siliguri-font text-xl md:tetx-2xl font-medium">${details.meaning || 'অর্থ পাওয়া যায় নি'}</p>
             <p class="text-xl md:tetx-2xl font-semibold">Example</p>
