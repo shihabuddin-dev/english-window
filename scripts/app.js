@@ -21,31 +21,29 @@ const displayDataByBtn = (data) => {
         `
         dynamicBtn.appendChild(newDiv)
     });
-
+    document.querySelectorAll(".category-btn").forEach(button => {
+        button.addEventListener("click", function () {
+            showById('all-dynamic-container')
+            hideById('default-div')
+            document.querySelectorAll(".category-btn").forEach(btn => {
+                btn.classList.remove("active");
+            })
+            this.classList.add("active");
+        })
+    })
 }
-
 // Get Words by Levels 
 const getLevelData = async (level) => {
+    showSpinner()
     try {
         const response = await fetch(`https://openapi.programming-hero.com/api/level/${level}`)
         const data = await response.json()
         displayDataByLevel(data.data);
-        // Button click event listener
-        document.querySelectorAll(".category-btn").forEach(button => {
-            button.addEventListener("click", function () {
-                showById('all-dynamic-container')
-                hideById('default-div')
-                // Remove active class from all buttons
-                document.querySelectorAll(".category-btn").forEach(btn => {
-                    btn.classList.remove("active");
-                })
-                this.classList.add("active");
-            })
-        })
     } catch (error) {
         console.log('Here is an Error', error);
     }
 }
+
 const displayDataByLevel = (levels) => {
     const dynamicContainer = getById('all-dynamic-container')
     dynamicContainer.innerHTML = ''
@@ -58,15 +56,16 @@ const displayDataByLevel = (levels) => {
             <h2 class="hind-siliguri-font text-2xl md:text-[34px] font-medium">নেক্সট Lesson এ যান</h2>
         </div>
         `
+        hideSpinner()
     }
     levels.forEach(level => {
         const newDiv = createByTagName('div')
         newDiv.innerHTML = `
-         <div class="p-8 md:p-14 space-y-8 md:space-y-12 bg-white rounded-md">
+         <div class="p-8 md:p-14 space-y-8 md:space-y-12 bg-white hover:bg-modal-btn-bg hover:transition-transform rounded-md">
                 <div class="text-center space-y-3 md:space-y-5">
                     <h3 class="text-2xl md:text-[32px] font-bold">${level.word}</h3>
                     <h4 class="text-lg md:text-xl font-medium">Meaning/ Pronunciation</h4>
-                    <h3 class="hind-siliguri-font text-xl md:text-3xl font-semibold">${level.meaning ? `${level.meaning}` : `অর্থ নেই`}/ ${level.pronunciation}
+                    <h3 class="hind-siliguri-font text-xl md:text-3xl font-semibold">"${level.meaning ? `${level.meaning}` : `অর্থ নেই`}/ ${level.pronunciation}"
                     </h3>
                 </div>
                 <div class="flex items-center justify-between cursor-pointer">
@@ -81,6 +80,7 @@ const displayDataByLevel = (levels) => {
             </div>
         `
         dynamicContainer.appendChild(newDiv)
+        hideSpinner()
     })
 }
 // Get Words Detail by modal
@@ -104,10 +104,10 @@ const displayWordDetails = (details) => {
         });
     }
     detailsContainer.innerHTML = `
-        <div class="rounded-md p-6 border-2 space-y-4">
-            <h3 onclick="pronounceWord('${details.word}, Word Example is, ${details.sentence}')" class="cursor-pointer text-2xl md:text-[32px] font-bold">${details.word} (<i class="fa-solid fa-microphone-lines"></i> ${details.pronunciation})</h3>
+        <div class="rounded-md p-6 border-2 border-modal-btn-bg space-y-4">
+            <h3 onclick="pronounceWord('${details.word}, Word Example is, ${details.sentence}')" class="cursor-pointer text-2xl md:text-[32px] font-bold">${details.word} (<i class="fa-solid fa-microphone-lines"></i>: ${details.pronunciation})</h3>
             <p class="text-xl md:tetx-2xl font-semibold">Meaning</p>
-            <p class="hind-siliguri-font text-xl md:tetx-2xl font-medium">${details.meaning || 'অর্থ পাওয়া যায় নি'}</p>
+            <p class="hind-siliguri-font text-xl md:tetx-2xl font-medium">${details.meaning || 'অর্থ পাওয়া যায়নি'}</p>
             <p class="text-xl md:tetx-2xl font-semibold">Example</p>
             <p class="text-xl md:tetx-2xl font-normal">${details.sentence}</p>
             <p class="hind-siliguri-font text-xl md:tetx-2xl font-medium">সমার্থক শব্দ গুলো</p>

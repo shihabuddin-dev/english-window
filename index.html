@@ -7,15 +7,14 @@
     <title>Learn English || With English Janala</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    <!-- sweet alert cdn  -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Font awesome cdn  -->
     <script src="https://kit.fontawesome.com/a8e60d2571.js" crossorigin="anonymous"></script>
     <!-- daisy ui and tailwind cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@$5/themes.css" rel="stylesheet" type="text/css" />
-
+    <!-- sweet alert cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- tailwind custom design  -->
     <script src="https://cdn.tailwindcss.com/"></script>
     <script>
@@ -43,9 +42,9 @@
 <body class="poppins-font px-2">
 
     <!-- header section  -->
-    <header id="navbar" class="md:fixed top-0 w-full z-10 px-4 md:px-6  border-b-2 border-b-four-color">
+    <header id="navbar" class="md:fixed top-0 w-full z-10 px-4 md:px-6 border-b-2 border-modal-btn-bg">
         <nav
-            class="flex flex-col md:flex-row gap-4 items-center justify-between border-t-2 border-third-color py-2 md:py-4 container mx-auto">
+            class="flex flex-col md:flex-row gap-4 items-center justify-between border-t-2 border-third-color py-2 md:py-5 container mx-auto">
             <div class="flex items-center"><span class="text-[28px] font-semibold">English</span>
                 <img src="./assets/logo.svg" alt="this is logo"> <span class="tiro-bangla-font text-xl">জানালা</span>
             </div>
@@ -59,7 +58,7 @@
                 <a href="#learn" class="flex"><button
                         class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
                             class="text-lg fa-solid fa-book-open"></i> Learn</button></a>
-                <button id="logout-btn"
+                <button onclick="pronounceWord('Have a great day See You Soon')" id="logout-btn"
                     class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
                         class="text-lg fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
             </div>
@@ -83,17 +82,17 @@
             <!-- login Option  -->
             <form class="space-y-3 md:space-y-5">
                 <input id="input-name" value="Shihab"
-                    class="border-2 border-secondary-color rounded-md py-2.5 pl-3 pr-10 focus:border-2 focus:border-primary-color focus:outline-none"
+                    class="border-2 border-secondary-color rounded-md py-1.5 md:py-2.5 pl-3 pr-10 focus:border-2 focus:border-primary-color focus:outline-none"
                     placeholder="Enter Your Name" type="text"> <br>
                 <input id="input-pin" value="123456"
-                    class="border-2 border-secondary-color rounded-md py-2.5 pl-3 pr-10 focus:border-2 focus:border-primary-color focus:outline-none"
+                    class="border-2 border-secondary-color rounded-md py-1.5 md:py-2.5 pl-3 pr-10 focus:border-2 focus:border-primary-color focus:outline-none"
                     placeholder="Enter Your Pin" type="password"> <br>
                 <button id="login-btn"
                     class="btn rounded-md bg-primary-color px-4 border-none text-white text-sm font-semibold hover:bg-primary-color">Get
                     Started</button>
             </form>
         </div>
-        <div>
+        <div class="md:w-10/12">
             <img src="./assets/hero-student.png" alt="main header image">
         </div>
     </section>
@@ -103,30 +102,25 @@
         <h2 class="text-center text-3xl md:text-4xl font-bold container mx-auto pb-2 md:pb-4"><span
                 class="text-secondary-color">Let's</span> Learn
             Vocabularies</h2>
-
         <!-- dynamic btn -->
-
         <div id="dynamic-btn-container" class="mt-6 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
-
-
         </div>
-
+        <!-- loading spinner   -->
+        <div id="spinner" class="mt-20 flex justify-center gap-4">
+            <span class="md:w-12 loading loading-infinity text-info"></span>
+            <span class="md:w-12 loading loading-infinity text-primary"></span>
+            <span class="md:w-12 loading loading-infinity text-neutral"></span>
+        </div>
         <!-- dynamic content  -->
         <section id="all-dynamic-container"
             class="grid gap-5 md:gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 inter-font bg-fourth-color p-4 md:p-8 container mx-auto mt-8 md:mt-12 rounded-lg">
 
-
         </section>
-
         <div id="default-div"
             class="rounded-md mt-8 md:mt-12 bg-fourth-color py-12 md:py-16 text-center space-y-3 md:space-y-4 container mx-auto">
             <p class="hind-siliguri-font text-sm">আপনি এখনো কোন Lesson Select করেন নি</p>
             <h2 class="hind-siliguri-font text-2xl md:text-[34px] font-medium">একটি Lesson Select করুন।</h2>
         </div>
-
-
-
-
     </section>
     <!-- Frequently Asked Questions section  -->
     <section id="faq" class="py-12 md:py-24 container mx-auto">
@@ -194,7 +188,7 @@
     </section>
     <!-- footer section  -->
     <footer id="footer"
-        class="flex flex-col md:flex-row gap-4 md:items-center justify-between border-t-2 border-four-color py-10 md:py-16 container mx-auto">
+        class="flex flex-col md:flex-row gap-4 md:items-center justify-between border-t-2 border-modal-btn-bg py-10 md:py-16 container mx-auto">
         <div>
             <div class="flex items-center pb-2 md:pb-5"><span
                     class="text-xl md:text-[28px] font-semibold">English</span> <img src="./assets/logo.svg"

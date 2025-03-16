@@ -6,6 +6,7 @@ getById('login-btn')
         const convertedPin = parseInt(inputPin)
         if (inputName && !inputName.includes(" ")) {
             if (convertedPin === 123456) {
+                pronounceWord('Welcome to English Janala')
                 Swal.fire({
                     title: "Successfully Logged in!",
                     text: `Hello ${inputName} Welcome to our English Learning Platform!`,
@@ -18,6 +19,7 @@ getById('login-btn')
                 showById('faq')
 
             } else {
+                pronounceWord('Invalid Pin Number')
                 Swal.fire({
                     title: "Login Failed!",
                     text: (`${convertedPin ? `${convertedPin}` : `Please Provide Valid Pin That`} is Wrong Pin Number`),
@@ -27,6 +29,7 @@ getById('login-btn')
                 alert
             }
         } else {
+            pronounceWord('Please Enter Your Name')
             Swal.fire({
                 title: "Login Failed!",
                 text: "Please Enter Your Name First",

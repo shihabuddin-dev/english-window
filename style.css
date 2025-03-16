@@ -17,6 +17,12 @@
   font-family: "Tiro Bangla", serif;
 }
 
+.category-btn.active {
+  background-color: #422AD5 !important;
+  color: white !important;
+  border-color: #422AD5 !important;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -29,18 +35,11 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.category-btn.active {
-  background-color: #422AD5 !important;
-  color: white !important;
-  border-color: #422AD5 !important;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 header {
-  border-bottom: 1px solid rgb(198, 189, 189);
   backdrop-filter: blur(40px);
   background: linear-gradient(178.08deg, rgba(255, 255, 255, 0.3) -28.101%, rgba(0, 0, 0, 0) 128.101%), linear-gradient(169.25deg, rgba(255, 255, 255, 0.05) 24.246%, rgba(0, 0, 0, 0) 24.246%);
 }
