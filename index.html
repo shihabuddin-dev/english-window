@@ -58,7 +58,7 @@
                 <a href="#learn" class="flex"><button
                         class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
                             class="text-lg fa-solid fa-book-open"></i> Learn</button></a>
-                <button id="logout-btn"
+                <button onclick="pronounceWord('Have a great day See You Soon')" id="logout-btn"
                     class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
                         class="text-lg fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
             </div>
@@ -67,7 +67,7 @@
     </header>
     <!-- first display section login -->
     <section id="login-page"
-        class="flex flex-col md:flex-row items-center justify-between py-10 md:py-16 container mx-auto px-2 sm:px-0">
+        class="flex flex-col md:flex-row items-center justify-between py-10 md:py-16 container mx-auto">
         <div>
             <h1 class="text-4xl md:text-5xl font-semibold md:font-bold"><span
                     class="text-secondary-color">English</span> is Easy!!
@@ -96,7 +96,7 @@
             <img src="./assets/hero-student.png" alt="main header image">
         </div>
     </section>
-    <div id="learn"></div>
+    <div id="learn" class="scroll-mt-72"></div>
     <!-- Let's Learn Vocabularies section  -->
     <section id="all-content" class="py-12 md:py-24 md:mt-20">
         <h2 class="text-center text-3xl md:text-4xl font-bold container mx-auto pb-2 md:pb-4"><span
@@ -123,7 +123,7 @@
         </div>
     </section>
     <!-- Frequently Asked Questions section  -->
-    <section id="faq" class="py-12 md:py-24 container mx-auto">
+    <section id="faq" class="md:scroll-mt-24 py-12 md:py-24 container mx-auto">
         <h2 class="text-center text-3xl md:text-4xl font-bold"><span class="text-secondary-color">Frequently</span>
             Asked Questions</h2>
 
