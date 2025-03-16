@@ -42,13 +42,34 @@ getById('logout-btn')
     .addEventListener('click', () => {
         const inputName = getById('input-name').value
         Swal.fire({
-            title: "Logged Out Successful!",
-            text: `I hope You Enjoyed all the Lesson Have a great day ${inputName} See You Soon`,
-            icon: "info",
-            confirmButtonText: "Exit"
-        })
-        showById('login-page')
-        hideById('navbar')
-        hideById('all-content')
-        hideById('faq')
+            title: "Are you sure?",
+            text: "You won't be able to Come Back here Without Log in!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Log out!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                setTimeout(() => {
+                    Swal.fire({
+                        title: "Logged Out!",
+                        text: `I hope You Enjoyed all the Lesson Have a great day ${inputName} See You Soon`,
+                        icon: "success"
+                    });
+                    pronounceWord('Have a great day See You Soon')
+                    showById('login-page')
+                    hideById('navbar')
+                    hideById('all-content')
+                    hideById('faq')
+                }, 800);
+
+            } else {
+                Swal.fire({
+                    title: "Cancelled!",
+                    text: "You came back as Logged In",
+                    icon: "info"
+                });
+            }
+        });
     })
