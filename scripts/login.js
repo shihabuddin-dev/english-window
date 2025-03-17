@@ -38,6 +38,7 @@ getById('login-btn')
             })
         }
     })
+
 getById('logout-btn')
     .addEventListener('click', () => {
         const inputName = getById('input-name').value
@@ -65,6 +66,7 @@ getById('logout-btn')
                 }, 800);
 
             } else {
+                pronounceWord('Cancelled')
                 Swal.fire({
                     title: "Cancelled!",
                     text: "You came back as Logged In",

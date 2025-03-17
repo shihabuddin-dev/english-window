@@ -44,21 +44,22 @@
     <!-- header section  -->
     <header id="navbar" class="md:fixed top-0 w-full z-10 px-4 md:px-6 border-b-2 border-modal-btn-bg">
         <nav
-            class="flex flex-col md:flex-row gap-4 items-center justify-between border-t-2 border-third-color py-2 md:py-5 container mx-auto">
-            <div class="flex items-center"><span class="text-[28px] font-semibold">English</span>
+            class="flex gap-4 items-center justify-between border-t-2 border-third-color py-2 md:py-5 container mx-auto">
+            <div class="hidden sm:flex items-center"><span class="text-[28px] font-semibold">English</span>
                 <img src="./assets/logo.svg" alt="this is logo"> <span class="tiro-bangla-font text-xl">জানালা</span>
             </div>
+            <img class="sm:hidden w-12" src="./assets/logo.svg" alt="this is logo">
 
             <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3">
-                <a href="#faq" class="flex">
+                <a href="#faq" class="hidden sm:flex">
                     <button
                         class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color  hover:border-primary-color hover:text-white rounded-md"><i
                             class="text-lg fa-solid fa-circle-question"></i> FAQ</button>
                 </a>
-                <a href="#learn" class="flex"><button
+                <a href="#learn" class="hidden sm:flex"><button
                         class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
                             class="text-lg fa-solid fa-book-open"></i> Learn</button></a>
-                <button onclick="pronounceWord('Have a great day See You Soon')" id="logout-btn"
+                <button id="logout-btn"
                     class="btn bg-transparent border-2 border-primary-color px-4 text-primary-color text-sm font-semibold hover:bg-primary-color hover:border-primary-color hover:text-white rounded-md"><i
                         class="text-lg fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
             </div>
